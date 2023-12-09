@@ -11,4 +11,8 @@
 def sanitize_file(source, output):
     with open(source, 'r') as fh:
         for line in fh:
-            line
+            no_digit_line = ''.join(i for i in line if not i.isdigit())
+            with open(output, 'w') as fh:
+                for line in fh:
+                    new_line = fh.write(no_digit_line)
+                return new_line
