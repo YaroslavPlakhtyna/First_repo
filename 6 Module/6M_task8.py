@@ -52,3 +52,4 @@ def save_applicant_data(source, output):
                 student_list.append(str(value))
             output_str = ','.join(student_list)
             output.write(output_str + '\n')
+        return output
