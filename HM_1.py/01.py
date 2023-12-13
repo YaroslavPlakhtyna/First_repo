@@ -54,11 +54,11 @@ from datetime import datetime, timedelta
 from collections import defaultdict
 
 users = [{"name": "Bill Gates", "birthday": datetime(1955, 10, 28)},
-         {"name": "Volodya", "birthday": datetime(1999, 12, 11)},
-         {"name": "Dad", "birthday": datetime(1970, 12, 16)},
-         {"name": "Mum", "birthday": datetime(1999, 12, 17)},
-         {"name": "Vlad", "birthday": datetime(1999, 12, 14)},
-         {"name": "Andrii", "birthday": datetime(1999, 11, 15)},
+         {"name": "Volodya", "birthday": datetime(1989, 12, 12)},
+         {"name": "Dad", "birthday": datetime(1959, 12, 16)},
+         {"name": "Mum", "birthday": datetime(1960, 12, 17)},
+         {"name": "Vlad", "birthday": datetime(1991, 12, 14)},
+         {"name": "Andrii", "birthday": datetime(1990, 12, 15)},
          {"name": "Oleh", "birthday": datetime(year=1999, month=9, day=12)}
          ]
 
