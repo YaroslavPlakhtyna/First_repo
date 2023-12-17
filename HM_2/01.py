@@ -37,7 +37,10 @@ def input_error(func):
             return func(*args, **kwargs)
         except ValueError:
             return "Give me name and phone please."
-
+        except IndexError:
+            return "You should write 2 values"
+        except KeyError:
+            return "Contact not found, please add contact."
     return inner
 
 def parse_input(user_input):
@@ -52,8 +55,9 @@ def add_contact(args, contacts):
     print(f'{contacts=}')
     return "Contact added."
 
+@input_error
 def change_contact(args, contacts):
-    name, phone = args
+    name, phone = args[0], args[1]
     if name in contacts.keys():
         contacts[name] = phone
         print(f'{contacts=}')
@@ -61,12 +65,16 @@ def change_contact(args, contacts):
     else:
         return "Contact not found, please add contact."
 
+@input_error
 def show_contact(args, contacts):
     name = args[0]
-    for key, value in contacts.items():
-        if key == name:
-            return value
-    return "Contact not found, please add contact."
+    phone = contacts[name]
+    return phone 
+# TODO: Need to remove
+#    for key, value in contacts.items():
+#        if key == name:
+#            return value
+#    return "Contact not found, please add contact." 
 
 def show_all_contact(contacts):
     info = ""
